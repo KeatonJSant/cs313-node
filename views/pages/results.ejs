@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
     <title>Answer</title>
 </head>
 <body>
-    The type of envelope you are sending is <%= type %> at <%= weight %> oz which will cost $<%= price %>
+    <% 
+    if (type === "letterStamped") {
+        type = "Letter (Stamped)"
+    } else if (type === "letterMetered") {
+        type = "Letter (Metered)"
+    } else if (type === "leFlats") {
+        type = "Large Envelope (Flats)"
+    } else if (type === "firstClass") {
+        type = "First-Class Package Service—Retail"
+    }
+    %>
+    <div id="header"><header><h1>UPS Letter Pricing</h1></header></div>
+    <div class="answer">The type of envelope you are sending is <%= type %> <br>at <%= weight %> oz which will cost $<%= price %></div>
+
 </body>
 </html>

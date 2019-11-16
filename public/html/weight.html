@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
     <title>Document</title>
 </head>
 <body>
-    <form action="/result" method="get">
-        <input type="text" name="weight">
+    <script src="/html/validate.js"></script>
+    <div id="header"><header><h1>UPS Letter Services</h1></header></div>
+    <div class="answer">
+    <form action="/result" method="get" onsubmit="return validate()">
+        <p id="bad"></p>
+        <input type="text" name="weight" placeholder="Weight" id="wt">
         <select name="type">
             <option>--Select--</option>
             <option value="letterStamped">Letter (Stamped)</option>
@@ -18,5 +23,6 @@
         </select>
         <input type="submit" value="Submit">
     </form>
+    </div>
 </body>
 </html>
