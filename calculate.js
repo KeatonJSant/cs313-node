@@ -81,7 +81,7 @@ function getParams (req, res) {
             price = letterMetered(weight)
         }
     } else if (type === "leFlats") {
-        price = letterMetered(weight)
+        price = leFlats(weight)
     } else {
         price = firstClass(weight)
     }
